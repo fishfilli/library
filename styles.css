@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(231, 231, 231);
+}
+
+header {
+  display: flex;
+  background-color: white;
+  padding: 1rem;
+  justify-content: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#add-book-btn {
+  background-color: white;
+  font-size: 2rem;
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+.library-container {
+  display: flex;
+  background-color: white;
+  width: 70vw;
+}
+
+th,
+td {
+  font-size: 1.5rem;
+  padding: 10px 2rem;
+}
