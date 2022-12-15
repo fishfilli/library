@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
     <title>My Library</title>
   </head>
   <body>
@@ -12,7 +13,7 @@
       <h1>my library</h1>
     </header>
     <main>
-      <button id="add-book-btn">+ Add Book</button>
+      <button id="add-book-button">+ Add Book</button>
       <div class="library-container">
         <table>
           <tr>
@@ -24,5 +25,42 @@
         </table>
       </div>
     </main>
+    <div class="modal">
+      <div class="modal-header">
+        <h2>Add New Book</h2>
+      </div>
+      <form class="modal-body">
+        <input
+          type="text"
+          id="title"
+          name="title"
+          placeholder="Title"
+          required
+        />
+        <input
+          type="text"
+          id="author"
+          name="author"
+          placeholder="Author"
+          required
+        />
+        <input
+          type="number"
+          id="pages"
+          name="pages"
+          placeholder="Pages"
+          required
+        />
+        <div class="read-or-not">
+          <label for="read">Have you read it?</label>
+          <input type="checkbox" id="read" name="read" />
+        </div>
+        <div class="modal-buttons">
+          <button id="add-button" type="submit">Add</button>
+          <button id="cancel-button" type="button">Cancel</button>
+        </div>
+      </form>
+    </div>
+    <div id="overlay"></div>
   </body>
 </html>
