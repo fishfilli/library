@@ -86,8 +86,8 @@ td {
   display: none;
 }
 
-.modal-body input[type="text"],
-.modal-body input[type="number"] {
+#modal-form input[type="text"],
+#modal-form input[type="number"] {
   padding: 0.5rem;
   border: 1px solid grey;
   border-radius: 5px;
