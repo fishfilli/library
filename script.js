@@ -15,4 +15,5 @@ function openModal() {
 function closeModal() {
   overlay.classList.remove("active");
   modal.classList.remove("active");
+  document.getElementById("modal-form").reset();
 }

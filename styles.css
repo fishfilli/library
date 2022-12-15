@@ -58,7 +58,7 @@ td {
   margin-bottom: 2rem;
 }
 
-.modal-body {
+#modal-form {
   display: flex;
   flex-direction: column;
   gap: 2rem;
