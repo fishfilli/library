@@ -57,15 +57,17 @@ function createCard(i) {
   const title = document.createElement("h3");
   const author = document.createElement("p");
   const pages = document.createElement("p");
+  const btnContainer = document.createElement("div");
   const readBtn = document.createElement("button");
   const deleteBtn = document.createElement("button");
 
   bookCard.classList.add("book-card");
+  btnContainer.classList.add("card-buttons");
   readBtn.classList.add("read-button");
   deleteBtn.classList.add("delete-button");
 
-  title.textContent = myLibrary[i].title;
-  author.textContent = `Author: ${myLibrary[i].author}`;
+  title.textContent = myLibrary[i].title.toLowerCase();
+  author.textContent = `Author: ${myLibrary[i].author.toLowerCase()}`;
   pages.textContent = `Pages: ${myLibrary[i].pages}`;
   deleteBtn.textContent = "Delete";
   if (myLibrary[i].read) {
@@ -78,6 +80,7 @@ function createCard(i) {
   bookCard.appendChild(title);
   bookCard.appendChild(author);
   bookCard.appendChild(pages);
-  bookCard.appendChild(readBtn);
-  bookCard.appendChild(deleteBtn);
+  bookCard.appendChild(btnContainer);
+  btnContainer.appendChild(readBtn);
+  btnContainer.appendChild(deleteBtn);
 }

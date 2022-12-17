@@ -47,6 +47,31 @@ main {
   padding: 1rem;
   overflow-wrap: anywhere;
   overflow: hidden;
+  text-transform: capitalize;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.card-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card-buttons button {
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+.card-buttons .delete-button {
+  background-color: #f87171;
+}
+
+.card-buttons .read-button {
+  background-color: rgb(231, 231, 231);
 }
 
 .modal {
