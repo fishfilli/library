@@ -28,6 +28,7 @@ addBookForm.addEventListener("submit", (event) => {
   let read = document.querySelector("#read").checked;
   const newBook = new book(title, author, pages, read);
   addBookToLibrary(newBook);
+  removeCards();
   displayLibrary();
   closeModal();
 });
@@ -43,6 +44,13 @@ function book(title, author, pages, read) {
 
 function addBookToLibrary(newBook) {
   myLibrary.push(newBook);
+}
+
+function removeCards() {
+  const library = document.querySelector(".library-container");
+  while (library.lastChild) {
+    library.removeChild(library.lastChild);
+  }
 }
 
 function displayLibrary() {
