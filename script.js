@@ -28,6 +28,7 @@ addBookForm.addEventListener("submit", (event) => {
   let read = document.querySelector("#read").checked;
   const newBook = new book(title, author, pages, read);
   addBookToLibrary(newBook);
+  displayLibrary();
   closeModal();
 });
 
@@ -42,4 +43,41 @@ function book(title, author, pages, read) {
 
 function addBookToLibrary(newBook) {
   myLibrary.push(newBook);
+}
+
+function displayLibrary() {
+  for (let i = 0; i < myLibrary.length; i++) {
+    createCard(i);
+  }
+}
+
+function createCard(i) {
+  const libraryContainer = document.querySelector(".library-container");
+  const bookCard = document.createElement("div");
+  const title = document.createElement("h3");
+  const author = document.createElement("p");
+  const pages = document.createElement("p");
+  const readBtn = document.createElement("button");
+  const deleteBtn = document.createElement("button");
+
+  bookCard.classList.add("book-card");
+  readBtn.classList.add("read-button");
+  deleteBtn.classList.add("delete-button");
+
+  title.textContent = myLibrary[i].title;
+  author.textContent = `Author: ${myLibrary[i].author}`;
+  pages.textContent = `Pages: ${myLibrary[i].pages}`;
+  deleteBtn.textContent = "Delete";
+  if (myLibrary[i].read) {
+    readBtn.textContent = "Read";
+  } else {
+    readBtn.textContent = "Unread";
+  }
+
+  libraryContainer.appendChild(bookCard);
+  bookCard.appendChild(title);
+  bookCard.appendChild(author);
+  bookCard.appendChild(pages);
+  bookCard.appendChild(readBtn);
+  bookCard.appendChild(deleteBtn);
 }
