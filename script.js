@@ -36,8 +36,8 @@ addBookForm.addEventListener("submit", (event) => {
 let myLibrary = [];
 
 function book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
+  this.title = title.toLowerCase();
+  this.author = author.toLowerCase();
   this.pages = pages;
   this.read = read;
 }
@@ -74,8 +74,8 @@ function createCard(i) {
   readBtn.classList.add("read-button");
   deleteBtn.classList.add("delete-button");
 
-  title.textContent = myLibrary[i].title.toLowerCase();
-  author.textContent = `Author: ${myLibrary[i].author.toLowerCase()}`;
+  title.textContent = myLibrary[i].title;
+  author.textContent = `Author: ${myLibrary[i].author}`;
   pages.textContent = `Pages: ${myLibrary[i].pages}`;
   deleteBtn.textContent = "Delete";
   if (myLibrary[i].read) {
@@ -91,4 +91,16 @@ function createCard(i) {
   bookCard.appendChild(btnContainer);
   btnContainer.appendChild(readBtn);
   btnContainer.appendChild(deleteBtn);
+
+  deleteBtn.addEventListener("click", (e) => {
+    let index = myLibrary.findIndex((obj) => {
+      return (
+        obj.title === e.target.parentNode.parentNode.firstChild.textContent
+      );
+    });
+
+    myLibrary.splice(index, 1);
+    removeCards();
+    displayLibrary();
+  });
 }
