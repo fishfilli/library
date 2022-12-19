@@ -80,6 +80,7 @@ function createCard(i) {
   deleteBtn.textContent = "Delete";
   if (myLibrary[i].read) {
     readBtn.textContent = "Read";
+    readBtn.classList.add("is-read");
   } else {
     readBtn.textContent = "Unread";
   }
@@ -102,5 +103,22 @@ function createCard(i) {
     myLibrary.splice(index, 1);
     removeCards();
     displayLibrary();
+  });
+
+  readBtn.addEventListener("click", (e) => {
+    let index = myLibrary.findIndex((obj) => {
+      return (
+        obj.title === e.target.parentNode.parentNode.firstChild.textContent
+      );
+    });
+    if (myLibrary[index].read === true) {
+      myLibrary[index].read = false;
+      readBtn.classList.remove("is-read");
+      readBtn.textContent = "Unread";
+    } else {
+      myLibrary[index].read = true;
+      readBtn.classList.add("is-read");
+      readBtn.textContent = "Read";
+    }
   });
 }

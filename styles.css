@@ -74,6 +74,10 @@ main {
   background-color: rgb(231, 231, 231);
 }
 
+.read-button.is-read {
+  background-color: #22c55e;
+}
+
 .modal {
   position: fixed;
   top: 50%;
